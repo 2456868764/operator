@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ingress-manager
+  name: ingress-manager
+  namespace: ingress-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingress-manager
+  template:
+    metadata:
+      labels:
+        app: ingress-manager
+    spec:
+      serviceAccountName: ingress-manager-sa
+      containers:
+      - image: 2456868764/ingress-manager:v1.0.0
+        name: ingress-manager
+        resources: {}
