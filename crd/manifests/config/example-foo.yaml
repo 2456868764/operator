@@ -1,0 +1,8 @@
+apiVersion: crd.jun.com/v1
+kind: Foo
+metadata:
+  name: example-jun-foo
+spec:
+  deploymentName: example-jun-foo
+  replicas: 1
+  serviceDomain:  demo.jun.com
