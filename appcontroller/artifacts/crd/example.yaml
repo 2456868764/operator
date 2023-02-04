@@ -1,0 +1,18 @@
+apiVersion: appcontroller.jun.com/v1
+kind: App
+metadata:
+  name: example-app
+  namespace: default
+spec:
+  deployment:
+    name: example-app-deployment
+    image: nginx:latest
+    replicas: 2
+  service:
+    name: example-app-service
+  ingress:
+    name: example-app-ingress
+    hostname: example.jun.com
+status:
+  availableReplicas: 2
+
